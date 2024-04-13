@@ -16,7 +16,7 @@ const handleGuess = () => {
     document.getElementById("myh2").textContent = "TOO HIGH";
     document.getElementById("mybut2").onclick = handleGuess; // Wait for next guess
   } else {
-    document.getElementById("myh2").textContent = "***YOU GUESSED RIGHT***";
+    document.getElementById("myh2").textContent = "🎉YOU GUESSED RIGHT🎉";
     running = false; // Exit the loop
   }
 };
