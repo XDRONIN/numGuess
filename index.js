@@ -1,16 +1,30 @@
 let minnum = 1;
 let maxnum = 100;
 let answer = Math.floor(Math.random() * (maxnum - minnum + 1) * minnum);
-let running = true;
-while (running) {
-  let guess = window.prompt("Enter a Number between 1 and 100");
-  guess = Number(guess);
+
+let guess;
+
+let running = false;
+
+// Function to handle the guessing logic
+const handleGuess = () => {
+  const guess = document.getElementById("guess").value;
   if (guess < answer) {
-    window.alert("Too Low");
+    document.getElementById("myh2").textContent = "TOO LOW";
+    document.getElementById("mybut2").onclick = handleGuess; // Wait for next guess
   } else if (guess > answer) {
-    window.alert("Too High");
+    document.getElementById("myh2").textContent = "TOO HIGH";
+    document.getElementById("mybut2").onclick = handleGuess; // Wait for next guess
   } else {
-    window.alert("You guessed right");
-    running = false;
+    document.getElementById("myh2").textContent = "***YOU GUESSED RIGHT***";
+    running = false; // Exit the loop
   }
-}
+};
+
+// Start the guessing loop when mybut2 is clicked
+document.getElementById("mybut2").onclick = function () {
+  if (!running) {
+    running = true;
+    handleGuess();
+  }
+};
