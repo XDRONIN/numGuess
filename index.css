@@ -2,6 +2,7 @@ body {
   background-color: palevioletred;
   padding: 20%;
   color: aliceblue;
+  overflow: hidden;
 }
 .txt {
   text-align: center;
