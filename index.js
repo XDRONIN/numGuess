@@ -1,7 +1,7 @@
 let minnum = 1;
 let maxnum = 100;
 let answer = Math.floor(Math.random() * (maxnum - minnum + 1) * minnum);
-console.log(answer);
+
 let guess;
 
 let running = false;
